@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resetting Password...</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #1e1e1e;
+            color: white;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loader {
+            border: 4px solid #333;
+            border-top: 4px solid #d00000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <h2>กำลังพากลับเข้าสู่แอป...</h2>
+        <p>หากแอปไม่เปิดอัตโนมัติ <a id="manual-link" href="#"
+                style="color: #00acc1; text-decoration: none;">คลิกที่นี่</a></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const oobCode = urlParams.get('oobCode');
+
+        function openApp() {
+            if (!oobCode) return;
+
+            let deepLink = "promax0777://reset?oobCode=" + oobCode;
+
+            window.location.href = deepLink;
+            document.getElementById('manual-link').href = deepLink;
+        }
+
+        if (oobCode) {
+            // ลองเปิดแอปจริงก่อน
+            openApp();
+        } else {
+            document.querySelector('h2').innerText = "ไม่พบรหัสยืนยัน";
+            document.querySelector('p').innerText = "กรุณาลองกดลิงก์จากอีเมลใหม่อีกครั้ง";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Hidden Picture Challenge",
+    "scheme": "promax0777",
+    "slug": "miniPor0777",
+    "version": "1.0.6",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.promax0777.HPC",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/WTG_DP.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a96afe9a-556b-462a-bdbd-b1aaa0b7cc5a"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.promax0777.HPC",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    }
+  }
+}
